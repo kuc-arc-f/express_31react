@@ -26,8 +26,25 @@ VITE_POSTGRES_PASSWORD=""
 VITE_POSTGRES_HOST=""
 VITE_POSTGRES_PORT=6543
 ```
+
+***
+* dev-start
+```
+yarn dev
+```
+
+* build
+```
+yarn build
+
+#or
+npx vite build
+
+```
 ***
 ### blog
+
+https://zenn.dev/knaka0209/scraps/44a812684ddbf4
 
 ***
 
