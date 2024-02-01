@@ -6,7 +6,7 @@
 
  date    : 2024/01/25
 
- update : 2024/01/28  
+ update : 2024/02/01  
 
 ***
 
@@ -28,6 +28,16 @@ VITE_POSTGRES_PORT=6543
 ```
 
 ***
+### react-build
+
+```
+npx esbuild --bundle ./src/client.tsx --format=esm --minify --outfile=./public/static/client.js
+
+#watch
+npx esbuild --bundle ./src/client.tsx --format=esm --minify --outfile=./public/static/client.js --watch
+```
+
+***
 * dev-start
 ```
 yarn dev
@@ -41,11 +51,6 @@ yarn build
 npx vite build
 
 ```
-
-***
-### Build React
-
-./ReadmeFront.md
 
 ***
 ### blog
