@@ -1,9 +1,7 @@
 import express from 'express';
 const router = express.Router();
 import LibConfig from '../lib/LibConfig';
-//require('dotenv').config();
 import LibPg from '../lib/LibPg';
-
 
 /**
 * 

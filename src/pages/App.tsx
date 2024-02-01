@@ -15,12 +15,12 @@ export default function Page() {
         </head>
         <div id="root"></div>
         {(process.env.NODE_ENV === "develop") ? (
-            <script type="module" src="/static/main.js"></script>
+            <script type="module" src="/static/client.js"></script>
         ): (
-            <script type="module" src="/public/static/main.js"></script>
+            <script type="module" src="/public/static/client.js"></script>
         )}
     </html>
     );
 }
-/* 
+/*
 */

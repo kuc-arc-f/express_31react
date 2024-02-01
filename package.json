@@ -3,6 +3,7 @@
   "scripts": {
     "dev": "NODE_ENV=develop vite dev",
     "build": "vite build",
+    "build:test": "vite build && vite build --mode client",
     "test": "ts-node src/index.ts"
   },
   "dependencies": {
