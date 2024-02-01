@@ -26,7 +26,7 @@ console.log("#getList");
       const item  = {
         "userId": 0,
       }
-      const json = await HttpCommon.serverPost(item, "/test/get_list")
+      const json = await HttpCommon.post(item, "/test/get_list")
       pageItems = json.data;
       console.log(json.data);
       setUpdatetime(new Date().toString());

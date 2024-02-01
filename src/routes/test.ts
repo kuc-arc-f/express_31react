@@ -3,6 +3,24 @@ const router = express.Router();
 import LibConfig from '../lib/LibConfig';
 import LibPg from '../lib/LibPg';
 
+
+/**
+* 
+* @param
+*
+* @return
+*/ 
+router.post('/test', async function(req: any, res: any) {
+  try {
+//    const items = await LibTodo.getItems(req);
+console.log(req.body);
+    res.json([]);
+  } catch (error) {
+    console.error(error);
+    res.sendStatus(500);
+  }
+});
+
 /**
 * 
 * @param

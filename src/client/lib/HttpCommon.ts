@@ -13,11 +13,11 @@ const HttpCommon = {
     try {
 //      const v= import.meta.env.PROD;
 //console.log("v=", v); external_api_key
-      item.external_api_key = import.meta.env.VITE_API_KEY;
+//      item.external_api_key = import.meta.env.VITE_API_KEY;
       let url = ""; 
-      if(!import.meta.env.PROD){
-        url = import.meta.env.VITE_API_URL;
-      }
+//      if(!import.meta.env.PROD){
+        //url = import.meta.env.VITE_API_URL;
+//      }
       const body: any = JSON.stringify(item);		
       const res = await fetch(url + "/api/test/test1", {
         method: 'POST',
