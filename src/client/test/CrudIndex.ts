@@ -16,7 +16,6 @@ const CrudIndex = {
                 userId: 0,
             }
 console.log(postItem); 
-//            const json = await HttpCommon.serverPost(postItem, "/test/get_list");
             const json = await HttpCommon.serverPost(postItem, "/test/get_list");
 //console.log(json);      
             let items: any[] = [];
@@ -40,10 +39,10 @@ console.log(postItem);
             let ret = false;
             const values = Crud.getInputValues();
             values.userId = 0;
-//            values.content = "";
+            values.content = "";
             values.completed = 1;
-console.log(values);
-            const json = await HttpCommon.serverPost(values, '/test/create');
+//console.log(values);
+            const json = await HttpCommon.serverPost(values, '/api/test/create');
 console.log(json);
             if (json.ret ===  LibConfig.OK_CODE) {
                 ret = true;

@@ -2,7 +2,7 @@ import {useState, useEffect}  from 'react';
 import { Link } from 'react-router-dom';
 import Head from '../components/Head'
 import HttpCommon from './lib/HttpCommon';
-
+import CrudIndex from './test/CrudIndex';
 //
 let pageItems: any[] = [];
 //
@@ -26,7 +26,8 @@ console.log("#getList");
       const item  = {
         "userId": 0,
       }
-      const json = await HttpCommon.post(item, "/test/get_list")
+      // /test/get_list
+      const json = await HttpCommon.post(item, "/api/test/test1");
       pageItems = json.data;
       console.log(json.data);
       setUpdatetime(new Date().toString());
@@ -36,7 +37,12 @@ console.log("#getList");
   }
   //
   const testProc = async function(){
-    getList();
+  }
+  //
+  const addProc = async function(){
+    await CrudIndex.addItem(); 
+    location.reload();
+//    console.log("addProc");
   }
   //
   return (
@@ -46,6 +52,14 @@ console.log("#getList");
     </h1>
     <hr />
     <p>Test-page</p>
+    <hr className="my-2" />
+    <label>Title:</label>
+    <input type="text" id="title" 
+    className="border border-gray-400 rounded-md px-3 py-2 w-full focus:outline-none focus:border-blue-500"
+    />
+    <hr className="my-2" />
+    <button className="btn-purple" onClick={()=>addProc()}>add
+    </button>
     <hr className="my-2" />
     <button className="btn-purple" onClick={()=>testProc()}>Test
     </button>

@@ -37,8 +37,6 @@ console.log(req.body);
     const client = LibPg.getClient();
     const resulete = await client.query(text);
     client.end();
-    /*
-    */
 //    res.json({ret: "OK", data: []});
     res.json({ret: "OK", data: resulete.rows});
   } catch (error) {

@@ -20,8 +20,8 @@ const Crud = {
       // inputタグから値を取得し、オブジェクトにセットする
       const title = (<HTMLInputElement>document.querySelector("#title")).value;
       data.title = title;
-      const content = (<HTMLInputElement>document.querySelector("#content")).value;
-      data.content = content;   
+//      const content = (<HTMLInputElement>document.querySelector("#content")).value;
+//      data.content = content;   
       return data;
     } catch (e) {
       console.error(e);
