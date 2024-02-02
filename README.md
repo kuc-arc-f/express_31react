@@ -51,6 +51,15 @@ yarn build
 npx vite build
 
 ```
+***
+### tailwindcss
+
+```
+npx tailwindcss -i ./src/main.css -o ./public/static/main.css
+
+#watch
+npx tailwindcss -i ./src/main.css -o ./public/static/main.css --watch
+```
 
 ***
 ### blog
