@@ -6,7 +6,7 @@
 
  date    : 2024/01/25
 
- update : 2024/02/03 
+ update : 2024/02/03
 
 ***
 
@@ -27,6 +27,10 @@ VITE_POSTGRES_HOST=""
 VITE_POSTGRES_PORT=6543
 ```
 
+* external API Server
+```
+VITE_API_URL=http://localhost:4000
+```
 ***
 ### react-build
 
