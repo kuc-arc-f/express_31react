@@ -2,7 +2,7 @@ import {useState, useEffect}  from 'react';
 import { Link } from 'react-router-dom';
 import Head from '../components/Head'
 import HttpCommon from './lib/HttpCommon';
-import CrudIndex from './test/CrudIndex';
+import CrudIndex from './test4/CrudIndex';
 //
 let pageItems: any[] = [];
 //
@@ -22,11 +22,11 @@ function Page() {
    */
   const getList = async function() {
     try{
-console.log("#getList");
+console.log("#Test4.getList");
       const item  = {
         "userId": 0,
-      }
-      const json = await HttpCommon.post(item, "/api/test/test1");
+      }      
+      const json = await HttpCommon.serverPost(item, "/test/get_list");
       pageItems = json.data;
       console.log(json.data);
       setUpdatetime(new Date().toString());
@@ -47,7 +47,7 @@ console.log("#getList");
   return (
   <div className="container mx-auto my-2 px-8 bg-white">
     <Head />
-    <h1 className="text-4xl text-gray-700 font-bold my-2">test1.tsx
+    <h1 className="text-4xl text-gray-700 font-bold my-2">test4.tsx
     </h1>
     <hr />
     <p>Test-page</p>

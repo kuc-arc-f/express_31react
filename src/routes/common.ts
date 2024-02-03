@@ -1,6 +1,7 @@
-const express = require('express');
+//const express = require('express');
+import express from 'express';
 const router = express.Router();
-require('dotenv').config();
+//require('dotenv').config();
 import axios from 'axios';
 
 /*****************************
@@ -9,7 +10,7 @@ todos -index
 router.post('/send_post', async function(req: any, res: any) {
   try {
     //console.log("url=", process.env.API_URL);
-    const url = process.env.API_URL; 
+    const url = import.meta.env.VITE_API_URL; 
 //console.log(req.body);
     const path = req.body.api_url;	
 console.log("path=", url + path);

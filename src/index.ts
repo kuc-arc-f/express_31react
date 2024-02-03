@@ -8,19 +8,20 @@ import Top from './pages/App';
 //
 //import Common from './lib/Common';
 import testRouter from './routes/test'; 
-//import commonRouter from './routes/common';
+import commonRouter from './routes/common';
 //
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
-console.log("env=", process.env.NODE_ENV)
+console.log("env=", process.env.NODE_ENV);
+//console.log("VITE_API_URL=", import.meta.env.VITE_API_URL);
 //
 const errorObj = {ret: "NG", messase: "Error"};
 
 // route
 app.use('/api/test', testRouter);
-
+app.use('/api/common', commonRouter);
 //SPA
 app.get('/*', (req: any, res: any) => {
   try {

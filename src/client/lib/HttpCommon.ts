@@ -37,8 +37,11 @@ const HttpCommon = {
   {
     try {
       item.api_key = "";
+      item.api_url = path;
+console.log(item);
+//return;
       const body: any = JSON.stringify(item);		
-      const res = await fetch(path, {
+      const res = await fetch("/api/common/send_post", {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},      
         body: body

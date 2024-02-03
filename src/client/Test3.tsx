@@ -6,12 +6,33 @@ import CrudIndex from './test/CrudIndex';
 //
 let pageItems: any[] = [];
 //
+function Spinner(){
+  return(
+  <div className="container mx-auto my-2 px-8 bg-white"
+   >
+    <div className="text-center text-xl">Loading now, Please wait...
+    </div>
+    <div className="flex justify-center" aria-label="読み込み中">
+      <div 
+      className="animate-spin h-6 w-6 border-4 border-blue-500 rounded-full border-t-transparent"></div>
+    </div>
+   <hr className="my-2" />
+  </div>
+  );
+}
+//
 function Page() {
   const [updatetime, setUpdatetime] = useState<string>("");
+  const [isLoading, setIsLoading] = useState(true);
   //
   useEffect(() => {
     (async () => {
-        getList();
+        setIsLoading(true);
+        await getList();
+        setTimeout(() => {
+          setIsLoading(false);
+          console.log("Delayed for 1 second.");
+        }, 5000);
     })()
   }, []);  
   /**
@@ -29,6 +50,8 @@ console.log("#getList");
       const json = await HttpCommon.post(item, "/api/test/test1");
       pageItems = json.data;
       console.log(json.data);
+      //
+
       setUpdatetime(new Date().toString());
     } catch (e) {
         console.error(e);
@@ -36,6 +59,12 @@ console.log("#getList");
   }
   //
   const testProc = async function(){
+    setIsLoading(true);
+    await getList();
+    setTimeout(() => {
+      setIsLoading(false);
+      console.log("Delayed for 1 second.");
+    }, 3000);    
   }
   //
   const addProc = async function(){
@@ -43,22 +72,15 @@ console.log("#getList");
     location.reload();
 //    console.log("addProc");
   }
+  if (isLoading) { return <Spinner /> }
   //
   return (
   <div className="container mx-auto my-2 px-8 bg-white">
     <Head />
-    <h1 className="text-4xl text-gray-700 font-bold my-2">test1.tsx
+    <h1 className="text-4xl text-gray-700 font-bold my-2">Test3.tsx, Loading Test.
     </h1>
     <hr />
     <p>Test-page</p>
-    <hr className="my-2" />
-    <label>Title:</label>
-    <input type="text" id="title" 
-    className="border border-gray-400 rounded-md px-3 py-2 w-full focus:outline-none focus:border-blue-500"
-    />
-    <hr className="my-2" />
-    <button className="btn-purple" onClick={()=>addProc()}>add
-    </button>
     <hr className="my-2" />
     <button className="btn-purple" onClick={()=>testProc()}>Test
     </button>
