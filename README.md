@@ -6,13 +6,13 @@
 
  date    : 2024/01/25
 
- update : 2024/02/03 
+ update : 2024/02/04
 
 ***
 
 vite + express, React SPA sample
 
-* vercel deploy
+* vercel deploy sample
 
 ***
 ### Setup
