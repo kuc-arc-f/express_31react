@@ -6,7 +6,6 @@ function Page() {
     <div>
         <Link to="/">Home</Link>
         <Link to="/about">&nbsp; [ about ]</Link>
-        <Link to="/test1">&nbsp; [ test1 ]</Link>
         <Link to="/test4">&nbsp; [ test4 ]</Link>
         <hr />
     </div>
@@ -14,6 +13,5 @@ function Page() {
 }
 export default Page;
 /*
-        <Link to="/test1">&nbsp; [ Test1 ]</Link>
-        <Link to="/todos">&nbsp; [ Todos ]</Link>
+<Link to="/test1">&nbsp; [ test1 ]</Link>
 */

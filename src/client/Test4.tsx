@@ -57,7 +57,7 @@ console.log("#Test4.getList");
     className="border border-gray-400 rounded-md px-3 py-2 w-full focus:outline-none focus:border-blue-500"
     />
     <hr className="my-2" />
-    <button className="btn-purple" onClick={()=>addProc()}>add
+    <button className="btn-purple" onClick={()=>addProc()}>Add
     </button>
     <hr className="my-2" />
     <button className="btn-purple" onClick={()=>testProc()}>Test
@@ -68,6 +68,9 @@ console.log("#Test4.getList");
     <div key={index}>
         <h3 className="text-3xl font-bold">{item.title}</h3>
         <span>ID: {item.id}, {item.createdAt}</span>
+        <a href={`/test4/show?id=${item.id}`}>
+          <button className="btn-outline-purple ms-2">Show</button>
+        </a>
         <hr />
     </div>
     )
