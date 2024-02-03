@@ -53,7 +53,7 @@ console.log(pageItem);
             const result = await CrudShow.delete(itemId);
             if(result) {
 //                window.location.reload();
-                window.location.href = '/test';
+                window.location.href = '/test4';
             }
         } catch (e) {
             console.error(e);
@@ -74,12 +74,10 @@ console.log(pageItem);
         <div className="mb-2">
         </div>            
         <hr className="my-1" />
-        {/*
-        <button onClick={()=>deleteItem()} className="btn-red">delete</button>
-        */}
+        <button onClick={()=>deleteItem()} className="btn-red"
+        >delete</button>
     </div>
-    )
-    ;
+    );
 }
 export default Home;
 
