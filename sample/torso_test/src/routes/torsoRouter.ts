@@ -2,14 +2,14 @@ import express from 'express';
 import axios from 'axios';
 import { createClient } from "@libsql/client";
 const router = express.Router();
+import LibTorso from '../lib/LibTorso';
 
-//const authToken = "";
-//
+/*
 const client = createClient({
   url: process.env.TORSO_URL,
   authToken: process.env.TORSO_AUTH_TOKEN,
 });
-
+*/
 /**
 * 
 * @param
@@ -18,7 +18,9 @@ const client = createClient({
 */
 router.get('/test', async function(req: any, res: any) {
   try {
+    const client = await LibTorso.getClient();
     //console.log("url=", process.env.API_URL);
+//    const resulte = await client.execute("SELECT * FROM test");
     const resulte = await client.execute("SELECT * FROM test");
     console.log(resulte.rows);
     //return res.json(response.data);
@@ -39,6 +41,7 @@ router.post('/get_list', async function(req: any, res: any) {
     const retObj = {ret: "NG", data: [], message: ""};
     if(req.body){
     //console.log("url=", process.env.API_URL);
+      const client = await LibTorso.getClient();
       const resulte = await client.execute("SELECT * FROM test ORDER BY id DESC LIMIT 100;");
 //console.log(resulte.rows);
       retObj.ret = "OK";
@@ -70,6 +73,7 @@ console.log(body);
       )
       `;
 console.log("sql=", sql);
+      const client = await LibTorso.getClient();
       const resulte = await client.execute(sql);
 //console.log(resulte.rows);
       retObj.ret = "OK";
