@@ -4,7 +4,7 @@
 
  Author  : Kouji Nakashima / kuc-arc-f.com
 
- date    : 2024/02/25
+ date    : 2024/02/24
 
  update :
 
@@ -17,7 +17,7 @@ api test,  sample
 
 * EXTERNAL_API_URL set
 ```
-VITE_APEXTERNAL_API_URLI_URL="http://localhost"
+EXTERNAL_API_URL="http://localhost"
 ```
 
 
