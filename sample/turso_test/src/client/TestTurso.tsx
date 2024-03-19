@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client'
 //mport { Link } from 'react-router-dom';
 import Head from '../components/Head'
 import HttpCommon from './lib/HttpCommon';
-import CrudIndex from './TestTorso/CrudIndex';
+import CrudIndex from './TestTurso/CrudIndex';
 //
 let pageItems: any[] = [];
 //
@@ -43,7 +43,7 @@ console.log("#Test4.getList");
       const item  = {
         "userId": 0,
       }      
-      const json = await HttpCommon.post(item, "/api/torso/get_list");
+      const json = await HttpCommon.post(item, "/api/turso/get_list");
       pageItems = json.data;
       console.log(json.data);
       setUpdatetime(new Date().toString());

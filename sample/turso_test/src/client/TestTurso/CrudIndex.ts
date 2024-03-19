@@ -48,7 +48,7 @@ console.log(items);
             };            
 console.log(item);
 //return;
-            const json = await HttpCommon.post(item, "/api/torso/create");
+            const json = await HttpCommon.post(item, "/api/turso/create");
 console.log(json);
             if (json.ret ===  LibConfig.OK_CODE) {
                 ret = true;

@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './client/home';
 import About from './client/about';
 import TestApi from './client/TestApi/TestApi';
-import TestTorso from './client/TestTorso';
+import TestTurso from './client/TestTurso';
 //
 export default function App(){
     return(
@@ -12,7 +12,7 @@ export default function App(){
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/test_api" element={<TestApi />} />
-        <Route path="/test_torso" element={<TestTorso />} />
+        <Route path="/test_turso" element={<TestTurso />} />
       </Routes>
     </div>
     )

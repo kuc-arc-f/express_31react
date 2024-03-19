@@ -6,7 +6,7 @@ function Page() {
     <div>
         <Link to="/">Home</Link>
         <Link to="/about">&nbsp; [ about ]</Link>
-        <Link to="/test_torso">&nbsp; [ testTorso ]</Link>
+        <Link to="/test_turso">&nbsp; [ testTurso ]</Link>
         <hr />
     </div>
     );

@@ -1,7 +1,7 @@
 
 import { createClient } from "@libsql/client";
 //
-const  LibTorso = {
+const  LibTurso = {
   /**
   * 
   * @param
@@ -22,4 +22,4 @@ const  LibTorso = {
     }
   },       
 }
-export default LibTorso;
+export default LibTurso;

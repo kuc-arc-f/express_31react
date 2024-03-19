@@ -1,4 +1,4 @@
-﻿# torso test
+﻿# turso test
 
  Version: 0.9.2
 
@@ -10,7 +10,7 @@
 
 ***
 
-torso, DB  sample
+turso, DB  sample
 
 ***
 ### Setting

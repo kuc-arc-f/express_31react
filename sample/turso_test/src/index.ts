@@ -11,7 +11,7 @@ import Top from './pages/App';
 //
 //app.use(cors())
 import commonRouter from './routes/commonRouter';
-import torsoRouter from './routes/torsoRouter';
+import tursoRouter from './routes/tursoRouter';
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
@@ -26,7 +26,7 @@ app.use(basicAuth({
 const errorObj = {ret: "NG", messase: "Error"};
 // route
 app.use('/api/common', commonRouter);
-app.use('/api/torso', torsoRouter);
+app.use('/api/turso', tursoRouter);
 //SPA
 app.get('/*', (req: any, res: any) => {
   try {
