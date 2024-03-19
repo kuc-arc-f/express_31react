@@ -15,7 +15,7 @@ turso, DB  sample
 ***
 ### Setting
 
-* torso URL, auth token
+* turso URL, auth token
 ```
 TORSO_AUTH_TOKEN=""
 TORSO_URL="libsql://"
