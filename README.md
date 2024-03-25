@@ -12,6 +12,8 @@
 
 express + React + esBuild, SPA sample
 
+* file base routing
+
 ***
 * dev-start
 ```
