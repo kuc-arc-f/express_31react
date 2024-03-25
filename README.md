@@ -6,7 +6,7 @@
 
  date    : 2024/01/25
 
- update : 2024/03/24  
+ update : 2024/03/24 
 
 ***
 
@@ -17,10 +17,16 @@ express + React + esBuild, SPA sample
 ```
 yarn dev
 ```
+***
 
-* build
+### build
+
+* build, start
 ```
 yarn build
+
+#start
+yarn start
 ```
 ***
 ### tailwindcss
