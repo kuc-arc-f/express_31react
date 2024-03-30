@@ -1,21 +1,21 @@
 
 import express from 'express';
-//import cors from 'cors';
 import { renderToString } from 'react-dom/server';
 import basicAuth  from "express-basic-auth";
-
 const app = express();
 import 'dotenv/config'
 //
 import Top from './pages/App';
 //
-//app.use(cors())
 import commonRouter from './routes/commonRouter';
+//
+//app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 console.log("env=", process.env.NODE_ENV)
 console.log("EXTERNAL_API_URL=", process.env.EXTERNAL_API_URL)
+//
 app.use(basicAuth({
   users: { "test": "1111" },
   challenge: true,

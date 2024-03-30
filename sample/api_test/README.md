@@ -13,6 +13,12 @@
 api test,  sample
 
 ***
+### API : workers + D1
+
+https://github.com/kuc-arc-f/hono_34api
+
+
+***
 ### .env
 
 * EXTERNAL_API_URL set

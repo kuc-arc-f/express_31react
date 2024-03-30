@@ -6,7 +6,6 @@ function Page() {
     <div>
         <Link to="/">Home</Link>
         <Link to="/about">&nbsp; [ about ]</Link>
-        <Link to="/test_api">&nbsp; [ testApi ]</Link>
         <hr />
     </div>
     );
