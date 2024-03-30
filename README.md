@@ -15,20 +15,14 @@ express + React + esBuild, SPA sample
 * file base routing
 
 ***
-* dev-start
-```
-yarn dev
-```
-***
-
 ### build
 
-* build, start
+* build, dev-start
+
 ```
 yarn build
 
-#start
-yarn start
+yarn dev
 ```
 ***
 ### tailwindcss
