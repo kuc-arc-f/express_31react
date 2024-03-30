@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-console.log("env=", process.env.NODE_ENV)
+//console.log("env=", process.env.NODE_ENV)
 //
 export default function Page() { 
     return (
@@ -8,9 +8,9 @@ export default function Page() {
         <head>
             <title>welcome</title>
             {(process.env.NODE_ENV === "production") ? (
-                <link href="/public/static/main.css" rel="stylesheet" /> 
+                <link href="/public/static/style.css" rel="stylesheet" /> 
             ): (
-                <link href="/static/main.css" rel="stylesheet" /> 
+                <link href="/static/style.css" rel="stylesheet" /> 
             )} 
         </head>
         <div id="app"></div>
@@ -23,4 +23,5 @@ export default function Page() {
     );
 }
 /*
+<link href="/static/style999.css" rel="stylesheet" />
 */
