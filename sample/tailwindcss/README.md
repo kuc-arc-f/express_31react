@@ -16,10 +16,13 @@ tailwindcss,  sample
 * tailwind set :tailwind.config.js
 
 ***
+
 ```
 yarn build
 
 yarn dev
+```
+
 
 ***
 
