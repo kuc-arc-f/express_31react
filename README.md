@@ -6,7 +6,7 @@
 
  date    : 2024/01/25
 
- update : 2024/03/30
+ update : 2024/03/30 
 
 ***
 
@@ -23,15 +23,6 @@ express + React + esBuild, SPA sample
 yarn build
 
 yarn dev
-```
-***
-### tailwindcss
-
-```
-npx tailwindcss -i ./src/main.css -o ./public/static/main.css
-
-#watch
-npx tailwindcss -i ./src/main.css -o ./public/static/main.css --watch
 ```
 
 ***
