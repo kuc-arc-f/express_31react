@@ -1,22 +1,20 @@
 
 import express from 'express';
-//import cors from 'cors';
 import { renderToString } from 'react-dom/server';
 import basicAuth  from "express-basic-auth";
-
 const app = express();
 import 'dotenv/config'
 //
 import Top from './pages/App';
 //
-//app.use(cors())
 import commonRouter from './routes/commonRouter';
 import tursoRouter from './routes/tursoRouter';
+//
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
+//console.log(process.env)
 console.log("env=", process.env.NODE_ENV)
-console.log("EXTERNAL_API_URL=", process.env.EXTERNAL_API_URL);
 //
 app.use(basicAuth({
   users: { "test": "1111" },
@@ -27,7 +25,6 @@ const errorObj = {ret: "NG", messase: "Error"};
 // route
 app.use('/api/common', commonRouter);
 app.use('/api/turso', tursoRouter);
-//SPA
 app.get('/*', (req: any, res: any) => {
   try {
     res.send(renderToString(Top()));

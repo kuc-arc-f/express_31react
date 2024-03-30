@@ -1,11 +1,10 @@
-//import Head from '../components/Head'
 import {useState, useEffect}  from 'react';
 import React from 'react'
-import ReactDOM from 'react-dom/client'
+//import ReactDOM from 'react-dom/client'
 //mport { Link } from 'react-router-dom';
 import Head from '../components/Head'
 import HttpCommon from './lib/HttpCommon';
-import CrudIndex from './test/CrudIndex';
+import CrudIndex from './TestApi/CrudIndex';
 //
 let pageItems: any[] = [];
 //
@@ -72,9 +71,6 @@ console.log("#Test4.getList");
     <div key={index}>
         <h3 className="text-3xl font-bold">{item.title}</h3>
         <span>ID: {item.id}, {item.createdAt}</span>
-        <a href={`/test/show?id=${item.id}`}>
-          <button className="btn-outline-purple ms-2">Show</button>
-        </a>
         <hr />
     </div>
     )
@@ -83,5 +79,9 @@ console.log("#Test4.getList");
   </div>
   );
 }
-
 export default Page;
+/*
+<a href={`/test/show?id=${item.id}`}>
+  <button className="btn-outline-purple ms-2">Show</button>
+</a>
+*/

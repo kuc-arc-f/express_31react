@@ -7,17 +7,17 @@ export default function Page() {
     <html>
         <head>
             <title>welcome</title>
-            {(process.env.NODE_ENV === "develop") ? (
-                <link href="/static/main.css" rel="stylesheet" /> 
-            ): (
+            {(process.env.NODE_ENV === "production") ? (
                 <link href="/public/static/main.css" rel="stylesheet" /> 
+            ): (
+                <link href="/static/main.css" rel="stylesheet" /> 
             )} 
         </head>
-        <div id="root"></div>
-        {(process.env.NODE_ENV === "develop") ? (
-            <script type="module" src="/static/client.js"></script>
+        <div id="app"></div>
+        {(process.env.NODE_ENV === "production") ? (
+            <script type="module" src="/public/static/entry-client.js"></script>
         ): (
-            <script type="module" src="/public/static/client.js"></script>
+            <script type="module" src="/static/entry-client.js"></script>
         )}
     </html>
     );

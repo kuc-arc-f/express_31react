@@ -6,12 +6,11 @@ function Page() {
     <div>
         <Link to="/">Home</Link>
         <Link to="/about">&nbsp; [ about ]</Link>
-        <Link to="/test_turso">&nbsp; [ testTurso ]</Link>
         <hr />
     </div>
     );
 }
 export default Page;
 /*
-<Link to="/test_api">&nbsp; [ testApi ]</Link>
+<Link to="/test4">&nbsp; [ test4 ]</Link>
 */

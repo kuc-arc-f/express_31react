@@ -6,19 +6,20 @@
 
  date    : 2024/03/10
 
- update :
+ update : 2024/03/30
 
 ***
 
-turso, DB  sample
+turso LibSQL,  sample
 
 ***
 ### Setting
 
 * turso URL, auth token
+
 ```
-TORSO_AUTH_TOKEN=""
-TORSO_URL="libsql://"
+TURSO_AUTH_TOKEN=""
+TURSO_URL="libsql://"
 ```
 
 ***
