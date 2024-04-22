@@ -1,5 +1,6 @@
 import {useState, useEffect}  from 'react';
 import React from 'react'
+import { z } from 'zod';
 //import ReactDOM from 'react-dom/client'
 //mport { Link } from 'react-router-dom';
 import Head from '../components/Head'
@@ -7,11 +8,22 @@ import LoadBox from '../components/LoadBox';
 import HttpCommon from './lib/HttpCommon';
 import CrudIndex from './TursoTodo/CrudIndex';
 //
+const FormData = z.object({
+  title: z
+    .string()
+    .min(2, { message: '2文字以上入力してください。' }),
+  content: z
+    .string()
+    .min(2, { message: '2文字以上入力してください。' }),
+});
+//
 let pageItems: any[] = [];
 let initDisplay = true;
 //
 function Page(){
   const [updatetime, setUpdatetime] = useState<string>("");
+  const [data, setData] = useState({ title: '', content: '' });
+  const [errors, setErrors] = useState(null);
   //
   useEffect(() => {
     (async () => {
@@ -30,9 +42,29 @@ function Page(){
    *
    * @return
    */
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData({ ...data, [name]: value });
+  };  
+  /**
+   *
+   * @param
+   *
+   * @return
+   */
   const addProc = async function(){
-    await CrudIndex.addItem(); 
-    location.reload();
+    try{    
+      setErrors(null);
+      FormData.parse(data);
+  console.log(errors);
+      if(!errors) {
+        await CrudIndex.addItem(); 
+        location.reload();
+      }  
+    } catch (e) {
+      console.error(e.flatten().fieldErrors);
+      setErrors(e.flatten().fieldErrors);
+    }
 //    console.log("addProc");
   }
   /**
@@ -66,15 +98,19 @@ console.log("#TursoTodo.getList");
       <h1 className="text-4xl font-bold my-2">TursoTodo.tsx</h1>
       <hr className="my-2" />
       <label className="text-3xl font-bold my-2">Title: 
-        <input type="text" id="title" 
+        <input type="text" id="title" name="title" onChange={handleChange}
         className="border border-gray-400 rounded-md px-3 py-2 w-full focus:outline-none focus:border-blue-500"
         />    
       </label>
+      {errors?.title && (<div className="error_message">{errors.title}</div>
+      )}
       <label className="text-3xl font-bold my-2">Content: 
-        <input type="text" id="content" 
+        <input type="text" id="content" name="content" onChange={handleChange}
         className="border border-gray-400 rounded-md px-3 py-2 w-full focus:outline-none focus:border-blue-500"
         />    
       </label>
+      {errors?.content && (<div className="error_message">{errors.content}</div>
+      )}
       <hr className="my-2" />
       <button className="btn-purple" onClick={()=>addProc()}>Save
       </button>    
