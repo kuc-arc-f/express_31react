@@ -1,5 +1,6 @@
 import {useState, useEffect}  from 'react';
 import React from 'react'
+import { z } from 'zod';
 //import ReactDOM from 'react-dom/client'
 //mport { Link } from 'react-router-dom';
 import LoadBox from '../components/LoadBox';
@@ -7,11 +8,19 @@ import Head from '../components/Head'
 import HttpCommon from './lib/HttpCommon';
 import CrudIndex from './TestApi/CrudIndex';
 //
+const FormData = z.object({
+  title: z
+    .string()
+    .min(2, { message: '2文字以上入力してください。' }),
+});
+//
 let pageItems: any[] = [];
 let initDisplay = true;
 //
 function Page(){
   const [updatetime, setUpdatetime] = useState<string>("");
+  const [data, setData] = useState({ title: '', content: '' });
+  const [errors, setErrors] = useState(null);
   //
   useEffect(() => {
     (async () => {
@@ -31,10 +40,31 @@ function Page(){
    * @return
    */
   const addProc = async function(){
-    await CrudIndex.addItem(); 
-    location.reload();
-//    console.log("addProc");
+    try {
+console.log(data);
+      setErrors(null);
+      FormData.parse(data);
+      //console.log(errors);
+      if(!errors) {
+        console.log("nothing, errors");
+        await CrudIndex.addItem(); 
+        location.reload();
+      }
+    } catch (e) {
+      console.error(e.flatten().fieldErrors);
+      setErrors(e.flatten().fieldErrors);
+    }
   }
+  /**
+   *
+   * @param
+   *
+   * @return
+   */
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData({ ...data, [name]: value });
+  };  
   /**
    *
    * @param
@@ -49,7 +79,7 @@ console.log("#Test4.getList");
       }      
       const json = await HttpCommon.serverPost(item, "/test/get_list");
       pageItems = json.data;
-      console.log(json.data);
+//      console.log(json.data);
       initDisplay = false;
       setUpdatetime(new Date().toString() + String(Math.random()));
     } catch (e) {
@@ -66,9 +96,11 @@ console.log("#Test4.getList");
       <h1 className="text-4xl font-bold my-2">TestApi.tsx</h1>
       <hr className="my-2" />
       <label>Title:</label>
-      <input type="text" id="title" 
+      <input type="text" id="title" name="title" onChange={handleChange}
       className="border border-gray-400 rounded-md px-3 py-2 w-full focus:outline-none focus:border-blue-500"
-      />    
+      />   
+      {errors?.title && (<div className="error_message">{errors.title}</div>
+      )} 
       <hr className="my-2" />
       <button className="btn-purple" onClick={()=>addProc()}>Save
       </button>    
