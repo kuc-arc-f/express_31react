@@ -34,7 +34,6 @@ function Page(){
     (async () => {
       initDisplay = false;
       setUpdatetime(new Date().toString() + String(Math.random()));
-//      getList();
     })()
   }, []);
   /**
@@ -57,10 +56,7 @@ function Page(){
     try{    
       setErrors(null);
       FormData.parse(data);
-console.log(errors);
-//      if(errors) {
-//        return;
-//      }  
+//console.log(errors);
       const result = await CrudIndex.addItem(); 
       if(result){
         alert("OK, add User");
@@ -68,7 +64,6 @@ console.log(errors);
       } else{
         alert("Error, add User");
       }
-
     } catch (e) {
       console.error(e.flatten().fieldErrors);
       setErrors(e.flatten().fieldErrors);

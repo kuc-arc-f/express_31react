@@ -1,6 +1,6 @@
 import CryptoJS  from 'crypto-js';
 import AES from 'crypto-js/aes';
-const secretKey = import.meta.env.VITE_CRYPTO_KEY;
+const secretKey = "1684142474738-852203";
 
 //
 const  LibCrypto = {

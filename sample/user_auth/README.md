@@ -19,7 +19,6 @@ user auth,  Turso sample
 
 ```
 VITE_APP_NAME="express_31react"
-VITE_CRYPTO_KEY="123"
 TURSO_AUTH_TOKEN=""
 TURSO_URL="libsql://"
 ```
