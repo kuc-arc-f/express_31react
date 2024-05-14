@@ -6,13 +6,20 @@
 
  date    : 2024/01/25
 
- update : 2024/04/28
+ update : 2024/05/12
 
 ***
 
 express + React + esBuild, SPA sample
 
 * file base routing
+
+***
+### sample
+
+* api_test: api sample
+
+* basic_auth: basic auth,  express-basic-auth use
 
 ***
 ### build
