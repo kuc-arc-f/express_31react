@@ -21,6 +21,15 @@ express + React + esBuild, SPA sample
 
 * basic_auth: basic auth,  express-basic-auth use
 
+* simple_auth: simple auth, user data from .env 
+
+* tailwindcss: css sample
+
+* turso_todo: Turso LibSQL sample, todos app
+
+* user_auth: user auth, user add possible
+
+
 ***
 ### build
 
