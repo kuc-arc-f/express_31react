@@ -15,7 +15,7 @@ express + React + esBuild, SPA sample
 * file base routing
 
 ***
-### sample
+### Sample
 
 * api_test: api sample
 
