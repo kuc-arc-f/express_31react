@@ -100,18 +100,4 @@ console.log(errors);
 
 export default Page;
 /*
-    <dialog id="modalDialog" className="dialog">
-      <div className="bg-white px-8 pt-3 pb-1 dialog_body_wrap">
-        <p className="text-3xl font-bold">OK, Check Complete</p>
-        <hr className="my-3" />
-        <form method="dialog mb-1">
-          <button 
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-8 rounded"
-          type="submit" value="OK">Ok</button>
-          <button 
-          className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white ms-2 py-1 px-4 border border-blue-500 hover:border-transparent rounded"
-          type="submit" value="CANCEL">Cancel</button>
-        </form>
-      </div>
-    </dialog>
 */
