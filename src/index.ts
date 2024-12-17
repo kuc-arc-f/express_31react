@@ -1,6 +1,5 @@
 
 import express from 'express';
-//import cors from 'cors';
 import { renderToString } from 'react-dom/server';
 const app = express();
 import 'dotenv/config'
@@ -8,9 +7,6 @@ import 'dotenv/config'
 import Top from './pages/App';
 //
 //import testRouter from './routes/test'; 
-//import commonRouter from './routes/commonRouter';
-//
-//app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
@@ -29,7 +25,7 @@ app.get('/*', (req: any, res: any) => {
 });
 
 //start
-const PORT = 4000;
+const PORT = 3000;
 app.listen({ port: PORT }, () => {
   console.log(`Server ready at http://localhost:${PORT}`);
 });

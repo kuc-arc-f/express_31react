@@ -27,35 +27,9 @@ export default defineConfig(({ mode }) => {
     }
   } else {
     return {
-      plugins: [react()], 
-      define: {
-        "process.env.NODE_ENV": '"development"',
-      },
-      build: {
-        lib: {
-          entry: [
-            './src/entry-client.jsx',
-          ],
-          formats: ['es'],
-          fileName: '[name]',
-        },
-        rollupOptions: {
-          output: {
-            dir: './public/static'
-          }
-        },
-        emptyOutDir: false,
-        copyPublicDir: false
-      }
+      plugins: [react()],
     }
   }
 })
 /*
-define: {
-  "process.env.NODE_ENV": '"production"',
-},
-"process.env.NODE_ENV": '"production"',
-"process.env.NODE_ENV": '"development"',
-
-
 */
