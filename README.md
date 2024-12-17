@@ -49,6 +49,7 @@ yarn dev
 ***
 ### changeLog
 
+* V_0_9_3 : vite 6 change
 * V_0_9_1 : new
 
 ***
