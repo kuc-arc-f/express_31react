@@ -1,6 +1,6 @@
 ﻿# express_31react
 
- Version: 0.9.3
+ Version: 0.9.4
 
  Author  :
 
@@ -49,6 +49,7 @@ yarn dev
 ***
 ### changeLog
 
+* V_0_9_4 : tailwindcss 4.0-beta
 * V_0_9_3 : vite 6 change
 * V_0_9_1 : new
 

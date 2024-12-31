@@ -8,7 +8,7 @@ function Home() {
     <div className="container mx-auto my-2 px-8 bg-white">
         <Head />
         <h1 className="text-4xl text-gray-700 font-bold my-2"
-        >Welcome</h1>
+        >Home</h1>
     </div>
     )
 }
