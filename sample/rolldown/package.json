@@ -1,0 +1,36 @@
+{
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon",
+    "dev:test": "NODE_ENV=development nodemon",
+    "build": "npm run clean && npm run build:server && vite build --mode client-prod && npm run build:css",
+    "build:server": "npx rolldown -c rolldown.config.js",
+    "build:js": "vite build --mode client-prod",
+    "build:css": "npx @tailwindcss/cli -i ./src/main.css -o ./public/static/main.css",
+    "clean": "rimraf dist && rimraf public/static",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.0-beta.8",
+    "axios": "^1.6.5",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.21.2",
+    "tailwindcss": "^4.0.0-beta.8"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.14.6",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "nodemon": "^3.1.0",
+    "rimraf": "^5.0.5",
+    "rolldown": "^1.0.0-beta.7",
+    "typescript": "~5.6.2",
+    "vite": "^6.0.1"
+  }
+}
