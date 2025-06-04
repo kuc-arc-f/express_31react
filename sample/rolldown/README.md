@@ -6,11 +6,11 @@
 
  date    : 2025/04/08
  
- update :
+ update : 2025/06/03
 
 ***
 
-express + rolldown sample
+rolldown-vite + React SPA + express example
 
 ***
 ### build
